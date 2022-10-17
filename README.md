@@ -1,5 +1,5 @@
-<h2>Contents</h2>
+## Contents
 
-<h4>데이터베이스</h4>
+### 데이터베이스
 
-- <a href=''>정규화(Normalization)</a>
+- <a href='https://github.com/younhwan97/cs-study/blob/main/database/normalization.md'>정규화(Normalization)</a>
