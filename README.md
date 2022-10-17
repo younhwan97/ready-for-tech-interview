@@ -1,2 +1,5 @@
 <h2>Contents</h2>
-* <a href='https://github.com/younhwan97/cs-study/tree/main/database'>database</a>
+
+<h4>데이터베이스</h4>
+
+- <a href=''>정규화(Normalization)</a>
