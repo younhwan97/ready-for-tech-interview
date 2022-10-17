@@ -12,7 +12,7 @@
 
 각 컬럼은 하나의 값만 가져야 한다.
 
-#### 각 컬럼의 값이 하나가 아닌 경우(= 제1 정규화를 만족하지 않은 경우)
+#### 제1 정규형을 만족하지 않은 경우
 
 |이름|설명|특징|
 |---|---|---|
@@ -24,8 +24,21 @@
 왜 문제가 될까❓❓
 
 ```sql
-Select * FROM table WHERE 특징 = '무료'
+SELECT * FROM table WHERE 특징 = '무료'
+SELECT * FROM table ORDER BY 특징
 ```
 
 위와 같은 SQL을 사용할 수 없음.
 
+#### 제1 정규형을 만족하는 경우
+
+|이름|설명|특징|
+|---|---|---|
+|MySQL|MySQL is ...|무료|
+|MySQL|MySQL is ...|표준 sql을 사용|
+|MySQL|MySQL is ...|다양한 운영체제 사용 가능|
+|MongoDB|MongoDB is ...|NoSQL|
+|MongoDB|MongoDB is ...|JSON 구조|
+|MongoDB|MongoDB is ...|Read/Write 성능 우수||
+
+컬럼의 값을 분리하여 테이블에 데이터를 나눠 저장
