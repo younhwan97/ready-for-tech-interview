@@ -96,10 +96,26 @@ SELECT 타입, COUNT(*) AS 인원 FROM table_name GROUP BY 타입
 |3|2|
 |4|1|
 
-각 그룹을 대상으로 COUNT 함수(=그룹 함수)가 수행되고, 타입과 함께 그룹함수의 결과가 출력된 것을 볼 수 있다. 
+<strong>각 그룹을 대상으로</strong> COUNT 함수(=그룹 함수)가 수행되고, 타입과 함께 그룹함수의 결과가 출력된 것을 볼 수 있다. 
 
 그러므로 GROUP BY 키워드를 유의미하게 사용하기 위해서는 그룹함수가 필요하다.
 
 > GROUP BY의 대상은 반드시 하나의 컬럼일 필요는 없다. <br/>
 소속과 타입으로 GROUP BY가 이뤄졌을 경우 타입뿐만 아니라 소속까지 같은 대상을 기준으로 그룹핑이 이뤄진다.
+
+<br/>
+
+### HAVING 
+
+SELECT 쿼리는 FROM ➡️ WHERE ➡️ GROUP BY ➡️ HAVING ➡️ SELECT ➡️ ORDER BY 순서로 실행된다.
+
+위 실행 순서에서 알 수 있듯이 먼저 테이블을 대상으로 WHERE 조건을 걸었다면, 각 그룹을 대상으로 조건을 걸기위해 HAVING이 필요하다.
+
+```SQL
+SELECT 타입, COUNT(*) AS 개수 FROM table_name WHERE 소속 = '전남대학교' GROUP BY 타입 HAVING COUNT(*) <= 2
+```
+
+1. 테이블에서 소속이 전남대학교인 데이터만 고른다.
+2. 데이터를 타입을 기준으로 그룹핑한다.
+3. 각 그룹에 속한 데이터의 개수가 2보다 같거나 작은 그룹만 출력한다.
 
